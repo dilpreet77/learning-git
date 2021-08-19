@@ -128,8 +128,19 @@ export const initialState: CityState = {
 
 export const _cityReducer = createReducer(
   initialState,
-  on(growPopulation, (state, { data }) => {
-    return state;
+  on(growPopulation, (state, data) => {
+      const newCities = state.cities.map(city => {
+          if (city.CityName === data.data.CityName) {
+              return {
+                  ...city,
+                  Population: city.Population + 100000
+              }
+          }
+          return city;
+      });
+      return {
+          cities: newCities
+      };
   }),
   on(removePopulation, (state, { data }) => {
     // let allCities = state.cities;

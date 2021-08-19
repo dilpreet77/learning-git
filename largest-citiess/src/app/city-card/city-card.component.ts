@@ -11,7 +11,7 @@ import { CityState, getCities } from '../store/cities.reducer';
   styleUrls: ['./city-card.component.css'],
 })
 export class CityCardComponent implements OnInit {
-  
+
   // Input Decorator
   @Input() city: any;
 
@@ -39,12 +39,7 @@ export class CityCardComponent implements OnInit {
 
   // Grow Population
   growPopulation() {
-    // this.store.dispatch(growPopulation({ data: { } }))
-    if (this.city.CityName == this.city.CityName) {
-      let growedPopulation = (this.city.Population =
-        this.city.Population + 1000000);
-      this.city.Population = growedPopulation;
-    }
+    this.store.dispatch(growPopulation({ data: this.city }));
   }
 
   // Remove Population
@@ -65,7 +60,7 @@ export class CityCardComponent implements OnInit {
     //   this.city.Population = this.city.Population - 5000000;
     //   //Disabled button on less than 5 million
     //   if (this.city.Population < 5000000) {
-       
+
     //   }
     // }
   }

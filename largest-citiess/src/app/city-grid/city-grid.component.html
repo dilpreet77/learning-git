@@ -1,0 +1,31 @@
+<!-- Parent Component Start -->
+<div class="container">
+  <br/>
+  <div class="row">
+    <div class="col-md-6 left-side">
+      <h1>Largest Cities Map</h1>
+    </div>
+    <div class="col-md-6 right-side">
+      <br/>
+      <mat-toolbar color="primary">
+        <div>
+          <mat-slider
+            [max]="5000000"
+            [min]="0"
+            [step]="1000000"
+            [thumbLabel]="true"
+            (change)="onChange($event)"
+          >
+          </mat-slider>
+        </div>
+      </mat-toolbar>
+    </div>
+  </div>
+  <br>
+  <div class="image">
+    <!-- Child Component Start -->
+    <app-city-card *ngFor="let city of cityLists" [city]="city"></app-city-card>
+    <!-- Child Component End -->
+  </div>
+</div>
+<!-- Parent Component End -->

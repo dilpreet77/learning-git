@@ -1,0 +1,9 @@
+.example-card {
+  max-width: 400px;
+}
+img.mat-card-image.city-image {
+  max-height: 220px;
+}
+.col-md-12.card-div {
+  padding: 16px;
+}

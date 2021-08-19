@@ -1,0 +1,7 @@
+.image {
+  display: flex;
+  flex-flow: wrap;
+}
+mat-toolbar.mat-toolbar.mat-primary.mat-toolbar-single-row {
+  width: 50%;
+}
